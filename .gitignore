@@ -1,0 +1,10 @@
+flowers/
+*.zip
+*.npy
+
+.vscode/
+__pycache__/
+.ipynb_checkpoints/
+
+
+flower-recognition-cnn-keras.ipynb
