@@ -1,6 +1,7 @@
 flowers/
 *.zip
 *.npy
+*.npz
 
 .vscode/
 __pycache__/
