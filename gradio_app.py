@@ -81,4 +81,4 @@ with gr.Blocks(title="ScratchNet — 7-Class Flower Classifier") as demo:
 
 if __name__ == "__main__":
     print("Launching Gradio interface...")
-    demo.launch(server_name="127.0.0.1", server_port=7860, share=False)
+    demo.queue().launch(server_name="0.0.0.0", server_port=7860, ssr_mode=False)
