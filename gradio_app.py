@@ -11,7 +11,19 @@ import gradio as gr
 from PIL import Image
 from model import predict_flower, CATEGORIES, FLOWER_DETAILS
 
+# Hugging Face ZeroGPU decorator support
+try:
+    import spaces
+except ImportError:
+    class DummySpaces:
+        def GPU(self, fn=None, duration=60):
+            if fn is None:
+                return lambda f: f
+            return fn
+    spaces = DummySpaces()
 
+
+@spaces.GPU
 def classify_flower(image):
     if image is None:
         return "Please upload an image.", {}, ""
